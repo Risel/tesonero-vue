@@ -2,6 +2,7 @@
   <img src="@/assets/berries.png" alt="berries" class="berries">
   <ul class="carousel">
       <carousel-card
+        class="carousel__item"
         v-for="item in elements"
         :key="item.id"
         :icon="item.icon"
@@ -53,7 +54,6 @@ export default {
           icon: tablet,
           description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
         },
-
       ],
     };
   },
@@ -66,7 +66,6 @@ export default {
   top: 530px;
 }
 .carousel {
-  animation: spin 3s infinite;
   position: relative;
   width: 37rem;
   height: 37rem;
@@ -114,14 +113,6 @@ export default {
   }
   & > *:nth-of-type(6) {
     transform: rotate(360deg) translate(20rem) rotate(-360deg);
-  }
-}
-@keyframes spin {
-  from {
-    transform:rotate(0deg);
-  }
-  to {
-    transform:rotate(360deg);
   }
 }
 </style>
