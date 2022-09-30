@@ -20,10 +20,12 @@ export default {
 .card {
   display: flex;
   align-items: center;
-  width: 14rem;
+  color:$blue;
+  font-size: 16px;
+
   &__icon {
-    width: 6.25rem;
-    height: 6.25rem;
+    width: 7rem;
+    height: 7rem;
   }
   &__text {
     text-align: center;

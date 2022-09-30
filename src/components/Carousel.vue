@@ -1,5 +1,9 @@
 <template>
-  <img src="@/assets/berries.png" alt="berries" class="berries">
+  <img
+    src="@/assets/berries.png"
+    alt="berries"
+    class="background-mid"
+  >
   <ul class="carousel">
       <carousel-card
         class="carousel__item"
@@ -26,32 +30,32 @@ export default {
       elements: [
         {
           id: 1,
-          icon: headset,
+          icon: box,
           description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
         },
         {
           id: 2,
-          icon: box,
-          description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
-        },
-        {
-          id: 3,
-          icon: label,
-          description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
-        },
-        {
-          id: 4,
-          icon: box,
-          description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
-        },
-        {
-          id: 5,
           icon: headset,
           description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
         },
         {
-          id: 6,
+          id: 3,
           icon: tablet,
+          description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+        },
+        {
+          id: 4,
+          icon: headset,
+          description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+        },
+        {
+          id: 5,
+          icon: box,
+          description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+        },
+        {
+          id: 6,
+          icon: label,
           description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
         },
       ],
@@ -61,10 +65,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.berries {
-  position: absolute;
-  top: 530px;
-}
+
 .carousel {
   position: relative;
   width: 37rem;
@@ -114,5 +115,11 @@ export default {
   & > *:nth-of-type(6) {
     transform: rotate(360deg) translate(20rem) rotate(-360deg);
   }
+}
+.background-mid {
+  position: absolute;
+  filter: drop-shadow(0px 40px 80px rgba(0, 0, 0, 0.16));
+  top: 25.5rem;
+  width: 37rem;
 }
 </style>
