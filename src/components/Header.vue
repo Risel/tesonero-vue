@@ -44,14 +44,21 @@ export default {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-left: 87px;
-
+    margin-left: 5.4rem;
     &-item {
-      margin-left: 87px;
+      margin-left: 5.4rem;
     }
   }
   &-end {
-    margin-right: 84px;
+    margin-right: 5.25rem;
+  }
+  @media screen and (max-width: 1160px){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__items-item{
+      display: none;
+    }
   }
 }
 </style>
