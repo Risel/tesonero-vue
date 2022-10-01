@@ -21,8 +21,8 @@
   </main>
   <footer>
     <div class="footer__wrapper">
-      <div>1</div>
-      <div>2</div>
+      <Testimonials/>
+      <FAQ/>
     </div>
   </footer>
 </template>
@@ -32,13 +32,17 @@
 import Header from '@/components/Header.vue';
 import CarouselDesktop from '@/components/Carousel.vue';
 import GreenDevider from '@/components/UI/GreenDevider.vue';
+import Testimonials from '@/components/Testimonials.vue';
+import FAQ from '@/components/FAQ.vue';
 
 export default {
   name: 'App',
   components: {
+    Testimonials,
     CarouselDesktop,
     GreenDevider,
     Header,
+    FAQ,
   },
 };
 </script>
@@ -96,5 +100,8 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  flex-grow: 0;
 }
 </style>
