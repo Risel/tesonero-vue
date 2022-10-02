@@ -1,24 +1,22 @@
-# tesonero-vue
 
-## Project setup
-```
-npm install
-```
+# Product 24
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+This is test task for Tesonero. Build with Vue.js
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Features
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Adaptive design
+- Carousel on mobiles and tablets
+
+
+
+## Production Build
+#### https://product24.netlify.app
+
+
+## Tech Stack
+
+**Client:** Vue.js, Vue-3-Carousel, SCSS
+
+
