@@ -7,7 +7,7 @@
     <CarouselMobile v-else/>
   </main>
   <footer class="footer">
-    <div class="footer__wrapper-desktop" v-if="width > 870">
+    <div class="footer__wrapper-desktop" v-if="width > 950">
       <Testimonials/>
       <FAQ/>
     </div>

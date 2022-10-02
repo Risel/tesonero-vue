@@ -1,6 +1,6 @@
 <template>
   <div class="carousel__header">
-    <green-devider/>
+    <green-divider/>
     <h1 class="carousel__header-title">Lorem ipsum, dolor sit amet consectetur</h1>
   </div>
   <img
@@ -34,13 +34,13 @@ import box from '@/assets/box.svg';
 import label from '@/assets/label.svg';
 import tablet from '@/assets/tablet.svg';
 import CarouselCard from '@/components/CarouselCard.vue';
-import GreenDevider from '@/components/UI/GreenDevider.vue';
+import GreenDivider from '@/components/UI/GreenDivider.vue';
 
 export default {
   name: 'carousel-desktop',
   components: {
     CarouselCard,
-    GreenDevider
+    GreenDivider,
   },
   data() {
     return {
