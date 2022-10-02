@@ -3,26 +3,17 @@
     <Header/>
   </header>
   <main class="main">
-    <img
-      src="@/assets/bubbles-2.svg"
-      alt="bubbles"
-      class="main__background-bubbles main__background-bubbles_left"
-    >
-    <img
-      src="@/assets/bubbles-1.svg"
-      alt="bubbles"
-      class="main__background-bubbles main__background-bubbles_right"
-    >
-    <div class="main__header">
-      <green-devider/>
-      <h1 class="main__header-title">Lorem ipsum, dolor sit amet consectetur</h1>
-    </div>
-    <CarouselDesktop class="main__items"/>
+    <CarouselDesktop v-if="width > 950"/>
+    <CarouselMobile v-else/>
   </main>
-  <footer>
-    <div class="footer__wrapper">
+  <footer class="footer">
+    <div class="footer__wrapper-desktop" v-if="width > 870">
       <Testimonials/>
       <FAQ/>
+    </div>
+    <div class="footer__wrapper-mobile" v-else>
+      <FAQ/>
+      <Testimonials/>
     </div>
   </footer>
 </template>
@@ -30,19 +21,32 @@
 <script>
 
 import Header from '@/components/Header.vue';
-import CarouselDesktop from '@/components/Carousel.vue';
-import GreenDevider from '@/components/UI/GreenDevider.vue';
+import CarouselDesktop from '@/components/CarouselDesktop.vue';
 import Testimonials from '@/components/Testimonials.vue';
 import FAQ from '@/components/FAQ.vue';
+import CarouselMobile from '@/components/CarouselMobile.vue';
 
 export default {
   name: 'App',
   components: {
+    CarouselMobile,
     Testimonials,
     CarouselDesktop,
-    GreenDevider,
     Header,
     FAQ,
+  },
+  data() {
+    return {
+      width: null,
+    };
+  },
+  methods: {
+    updateWidth() {
+      this.width = window.innerWidth;
+    },
+  },
+  created() {
+    window.addEventListener('resize', this.updateWidth);
   },
 };
 </script>
@@ -55,53 +59,36 @@ export default {
   font-family: Roboto,sans-serif;
 }
 
-.main{
+.main {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   flex-direction: column;
   padding: 75px 0;
   background: linear-gradient(111.04deg, #E2E2E2 0.39%, rgba(255, 255, 255, 0) 86.46%);
   width: 100%;
   overflow: hidden;
-  &__header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    &-title{
-      color: $blue;
-      text-transform: uppercase;
-      font-size: 40px;
-      font-weight: 700;
-    }
-  }
-
-  &__background-bubbles {
-    position: absolute;
-    filter:blur(5px);
-    &_left{
-      left: 0;
-      bottom: -5rem;
-      width: 27.5rem;
-      transform:rotate(55.73deg)
-    }
-    &_right{
-      top: 5rem;
-      right: -4rem;
-      width: 36.75rem;
-      transform:rotate(135.54deg);
-    }
+  @media screen and (max-width: 950px){
+    background: #fff;
   }
 }
-
-.footer__wrapper{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-shrink: 0;
-  position: relative;
-  flex-grow: 0;
+.footer {
+  &__wrapper-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+    flex-grow: 0;
+  }
+  &__wrapper-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
 }
 </style>
